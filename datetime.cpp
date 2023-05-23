@@ -112,7 +112,7 @@ std::string GetCurrentDate(bool IsAmericanFormat = false)
     tm* ltm = localtime(&now);
     std::string currentDate;
 
-    if (!IsAmericanFormat)
+    if (IsAmericanFormat)
     {
         if (ltm->tm_mon < 9) currentDate += "0";
         currentDate += std::to_string(ltm->tm_mon + 1);
